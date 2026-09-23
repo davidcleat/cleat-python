@@ -149,7 +149,7 @@ workspace. The signing secret is shown once.
 
 - The lines are **receive-only**. No outbound texts, no outbound calls, no 911.
 - US mobile numbers only.
-- The workspace owner verifies their identity once. Until then, reading messages answers 403.
+- The workspace owner verifies their identity once. Until then, reading messages answers 403 (`verify_first`); `list_lines` works regardless.
 - One identity-verified owner per line. Teammates in the workspace share the inbox.
 - Most services that refuse VoIP numbers accept a real mobile line, but nobody can promise
   that a particular service will accept a particular number.
