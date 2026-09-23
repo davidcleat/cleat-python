@@ -3,7 +3,7 @@ requires = ["hatchling"]
 build-backend = "hatchling.build"
 
 [project]
-name = "cleat-python"
+name = "cleatapi"
 version = "0.1.0"
 description = "Python client for the Cleat API: read SMS/2FA codes from ID-verified US mobile numbers."
 readme = "README.md"
@@ -35,7 +35,7 @@ Repository = "https://github.com/davidcleat/cleat-python"
 dev = ["pytest>=8.0"]
 
 [tool.hatch.build.targets.wheel]
-packages = ["src/cleat"]
+packages = ["src/cleatapi"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]

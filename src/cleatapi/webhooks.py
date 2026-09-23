@@ -5,7 +5,7 @@ configured endpoint as soon as it has stored the message, and signs it with the
 endpoint's ``whsec_`` secret.  Verify over the RAW REQUEST BYTES, before any
 JSON parsing or framework re-serialisation.
 
-    from cleat import verify_webhook, CleatSignatureError
+    from cleatapi import verify_webhook, CleatSignatureError
 
     try:
         event = verify_webhook(SECRET, request.body, request.headers["cleat-signature"])

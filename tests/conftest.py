@@ -12,7 +12,7 @@ from typing import Any, Callable, Sequence
 import httpx
 import pytest
 
-from cleat import AsyncCleatClient, CleatClient
+from cleatapi import AsyncCleatClient, CleatClient
 
 API_KEY = "clt_example"
 LINE_ID = "6f0a0b0c-1111-4222-8333-444455556666"

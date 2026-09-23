@@ -7,7 +7,7 @@ import time
 
 import pytest
 
-from cleat import (
+from cleatapi import (
     EVENT_MESSAGE_RECEIVED,
     EVENT_TEST,
     CleatSignatureError,

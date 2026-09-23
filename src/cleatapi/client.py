@@ -110,7 +110,7 @@ class _BaseClient:
         return {
             "Authorization": f"Bearer {self.api_key}",
             "Accept": "application/json",
-            "User-Agent": f"cleat-python/{__version__}",
+            "User-Agent": f"cleatapi/{__version__}",
         }
 
     @staticmethod
@@ -171,7 +171,7 @@ class _BaseClient:
 class CleatClient(_BaseClient):
     """A synchronous client for the Cleat API.
 
-        from cleat import CleatClient
+        from cleatapi import CleatClient
 
         with CleatClient() as cleat:          # reads CLEAT_API_KEY
             for line in cleat.list_lines():
@@ -372,7 +372,7 @@ class AsyncCleatClient(_BaseClient):
     """An asyncio client for the Cleat API.
 
         import asyncio
-        from cleat import AsyncCleatClient
+        from cleatapi import AsyncCleatClient
 
         async def main():
             async with AsyncCleatClient() as cleat:

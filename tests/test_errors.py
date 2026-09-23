@@ -2,7 +2,7 @@ from __future__ import annotations
 
 import pytest
 
-from cleat import (
+from cleatapi import (
     AuthenticationError,
     BadRequestError,
     CleatAPIError,

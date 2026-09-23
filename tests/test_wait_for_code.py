@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 import httpx
 import pytest
 
-from cleat import CleatTimeoutError
+from cleatapi import CleatTimeoutError
 from conftest import LINE_ID, json_response, make_client, message_payload
 
 
@@ -138,7 +138,7 @@ def test_wait_for_message_requires_a_code_by_default() -> None:
 
 def test_an_api_error_during_a_wait_is_not_swallowed() -> None:
     client, _ = make_client(json_response(402, {"error": "This line is on hold."}))
-    from cleat import LineOnHoldError
+    from cleatapi import LineOnHoldError
 
     with client:
         with pytest.raises(LineOnHoldError):
@@ -165,7 +165,7 @@ def test_http_timeouts_surface_as_cleat_timeout_error() -> None:
     def handler(request: httpx.Request) -> httpx.Response:
         raise httpx.ReadTimeout("too slow", request=request)
 
-    from cleat import CleatClient
+    from cleatapi import CleatClient
 
     with CleatClient("clt_example", transport=httpx.MockTransport(handler)) as client:
         with pytest.raises(CleatTimeoutError):

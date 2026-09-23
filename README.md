@@ -1,4 +1,4 @@
-# cleat-python
+# cleatapi
 
 Python client for the [Cleat](https://cleat.so) API: read the SMS/2FA codes and call transcripts that arrive on your Cleat phone lines.
 
@@ -6,20 +6,25 @@ Cleat rents ID-verified US mobile numbers that receive text messages and transcr
 
 ## Install
 
-Not on PyPI yet — install it from this repository:
-
 ```
-pip install git+https://github.com/davidcleat/cleat-python
+pip install cleatapi
 ```
 
 ```python
-import cleat
+import cleatapi
 ```
 
 Python 3.10 or newer. The only runtime dependency is [httpx](https://www.python-httpx.org/).
 
-The distribution is `cleat-python` and the import name is `cleat`. The bare name `cleat` on
-PyPI belongs to an unrelated project, so `pip install cleat` would install something else.
+Both the distribution and the import name are `cleatapi`. The bare name `cleat` on PyPI
+belongs to an unrelated project, so `pip install cleat` would install something else. The
+repository keeps the name `cleat-python`.
+
+Until the first release lands on PyPI, install it from here instead:
+
+```
+pip install git+https://github.com/davidcleat/cleat-python
+```
 
 ## Example
 
@@ -29,7 +34,7 @@ into your own staging app:
 ```python
 import os
 
-from cleat import CleatClient, CleatTimeoutError
+from cleatapi import CleatClient, CleatTimeoutError
 
 with CleatClient(os.environ["CLEAT_API_KEY"]) as cleat:
     lines = cleat.list_lines()
@@ -79,7 +84,7 @@ There is an async client with the same surface:
 ```python
 import asyncio
 
-from cleat import AsyncCleatClient
+from cleatapi import AsyncCleatClient
 
 
 async def main() -> None:
@@ -102,7 +107,7 @@ import os
 
 from flask import Flask, request
 
-from cleat import CleatSignatureError, verify_webhook
+from cleatapi import CleatSignatureError, verify_webhook
 
 app = Flask(__name__)
 SECRET = os.environ["CLEAT_WEBHOOK_SECRET"]

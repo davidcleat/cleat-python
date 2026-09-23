@@ -5,7 +5,7 @@ from datetime import datetime, timezone
 import httpx
 import pytest
 
-from cleat import (
+from cleatapi import (
     LINE_STATUS_ACTIVE,
     CleatClient,
     CleatConfigurationError,
@@ -48,7 +48,7 @@ def test_list_lines_parses_and_sends_the_bearer_token() -> None:
     assert recorder.last.method == "GET"
     assert recorder.last.url.path == "/api/v1/lines"
     assert recorder.last.headers["authorization"] == f"Bearer {API_KEY}"
-    assert recorder.last.headers["user-agent"].startswith("cleat-python/")
+    assert recorder.last.headers["user-agent"].startswith("cleatapi/")
 
     assert len(lines) == 2
     assert lines[0].id == LINE_ID

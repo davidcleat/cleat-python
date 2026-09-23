@@ -5,7 +5,7 @@ transcripts of incoming calls. The lines are receive-only: no outbound texts,
 no outbound calls, no 911.
 
     import os
-    from cleat import CleatClient
+    from cleatapi import CleatClient
 
     with CleatClient(os.environ["CLEAT_API_KEY"]) as cleat:
         line = cleat.list_lines()[0]

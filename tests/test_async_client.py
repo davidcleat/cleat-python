@@ -7,7 +7,7 @@ from datetime import datetime, timezone
 
 import pytest
 
-from cleat import (
+from cleatapi import (
     AsyncCleatClient,
     CleatConfigurationError,
     CleatTimeoutError,
