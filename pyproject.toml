@@ -1,0 +1,44 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "cleat-python"
+version = "0.1.0"
+description = "Python client for the Cleat API: read SMS/2FA codes from ID-verified US mobile numbers."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Hyppe Tech LLC" }]
+maintainers = [{ name = "Hyppe Tech LLC" }]
+keywords = ["cleat", "sms", "otp", "2fa", "phone", "verification"]
+dependencies = ["httpx>=0.24"]
+classifiers = [
+  "Development Status :: 4 - Beta",
+  "Intended Audience :: Developers",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3 :: Only",
+  "Typing :: Typed",
+]
+
+[project.urls]
+Homepage = "https://cleat.so"
+Documentation = "https://cleat.so/for/developers"
+Repository = "https://github.com/davidcleat/cleat-python"
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/cleat"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+# Lets `pytest` work straight from a clone, without installing the package first.
+pythonpath = ["src"]
+addopts = "-ra"
