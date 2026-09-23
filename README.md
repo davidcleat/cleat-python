@@ -16,15 +16,9 @@ import cleatapi
 
 Python 3.10 or newer. The only runtime dependency is [httpx](https://www.python-httpx.org/).
 
-Both the distribution and the import name are `cleatapi`. The bare name `cleat` on PyPI
-belongs to an unrelated project, so `pip install cleat` would install something else. The
-repository keeps the name `cleat-python`.
-
-Until the first release lands on PyPI, install it from here instead:
-
-```
-pip install git+https://github.com/davidcleat/cleat-python
-```
+Both the distribution and the import name are [`cleatapi`](https://pypi.org/project/cleatapi/).
+The bare name `cleat` on PyPI belongs to an unrelated project, so `pip install cleat` would
+install something else. The repository keeps the name `cleat-python`.
 
 ## Example
 
